@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Mi Extension V4",
+  "version": "1.0",
+  "description": "Mi Extension V4",
+  "icons": {
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
+  "action": {
+    "default_icon": "images/icon-32.png",
+    "default_title": "My Extension",
+    "default_popup": "src/pages/popup/index.html"
+  },
+  "permissions": [],
+  "background": {
+    "service_worker": "src/pages/background/index.ts"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["src/pages/content-script/index.tsx"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [],
+      "matches": []
+    }
+  ],
+  "options_page": "src/pages/options/index.html"
+}
